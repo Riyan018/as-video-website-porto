@@ -158,99 +158,115 @@
     <div class="bg-orb orb-3 fixed"></div>
 
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 top-0 transition-all duration-300" id="navbar">
+<nav class="fixed w-full z-50 top-0 transition-all duration-300" id="navbar">
     <div class="glass mx-auto max-w-5xl mt-5 rounded-full px-5 py-2.5 flex justify-between items-center w-[90%]">
-        <a href="#" class="flex items-center">
-    <img
-        src="./assets/logoPNG.png"
-        alt="RiEdit Logo"
-        class="h-5 w-auto object-contain block"
-    >
-</a>
-        
 
-        <div class="hidden md:flex space-x-7 items-center">
-            <a href="#home" class="text-sm text-slate-600 hover:text-slate-900 transition">
-                Beranda
-            </a>
-            <a href="#portfolio" class="text-sm text-slate-600 hover:text-slate-900 transition">
-                Karya
-            </a>
-            <a href="#skills" class="text-sm text-slate-600 hover:text-slate-900 transition">
-                Keahlian
-            </a>
+        <a href="#" class="flex items-center shrink-0">
+            <img
+                src="./assets/logoPNG.png"
+                alt="RiEdit Logo"
+                class="h-5 md:h-6 w-auto object-contain block">
+        </a>
+
+        <div class="hidden md:flex items-center gap-7">
+            <a href="#home" class="text-sm text-slate-600 hover:text-slate-900 transition">Beranda</a>
+            <a href="#portfolio" class="text-sm text-slate-600 hover:text-slate-900 transition">Karya</a>
+            <a href="#skills" class="text-sm text-slate-600 hover:text-slate-900 transition">Keahlian</a>
+
             <a href="#contact" class="glass-btn-primary px-5 py-2 rounded-full text-sm font-medium">
                 Hubungi Saya
             </a>
         </div>
 
-        <button class="md:hidden text-slate-700 hover:text-slate-900" onclick="toggleMenu()">
+        <button class="md:hidden text-slate-700 hover:text-slate-900"
+            onclick="toggleMenu()">
             <i class="fa-solid fa-bars text-xl"></i>
         </button>
 
     </div>
 </nav>
 
-        <!-- Mobile Menu (Hidden by default) -->
-        <div id="mobile-menu" class="hidden absolute top-20 left-[2.5%] w-[95%] glass rounded-2xl flex-col p-4 space-y-4 shadow-xl">
-            <a href="#home" class="text-slate-700 hover:text-slate-900 p-2 rounded-lg hover:bg-white/60" onclick="toggleMenu()">Beranda</a>
-            <a href="#portfolio" class="text-slate-700 hover:text-slate-900 p-2 rounded-lg hover:bg-white/60" onclick="toggleMenu()">Karya</a>
-            <a href="#skills" class="text-slate-700 hover:text-slate-900 p-2 rounded-lg hover:bg-white/60" onclick="toggleMenu()">Keahlian</a>
-            <a href="#contact" class="glass-btn-primary text-center py-2 rounded-lg font-medium" onclick="toggleMenu()">Hubungi Saya</a>
-        </div>
-    </nav>
+       <!-- Mobile Menu -->
+<div id="mobile-menu"
+    class="hidden absolute top-24 left-[2.5%] w-[95%] glass rounded-2xl flex-col p-4 space-y-4 shadow-xl z-50">
+
+    <a href="#home" onclick="toggleMenu()" class="text-slate-700 hover:text-slate-900 p-2 rounded-lg hover:bg-white/60">
+        Beranda
+    </a>
+
+    <a href="#portfolio" onclick="toggleMenu()" class="text-slate-700 hover:text-slate-900 p-2 rounded-lg hover:bg-white/60">
+        Karya
+    </a>
+
+    <a href="#skills" onclick="toggleMenu()" class="text-slate-700 hover:text-slate-900 p-2 rounded-lg hover:bg-white/60">
+        Keahlian
+    </a>
+
+    <a href="#contact" onclick="toggleMenu()" class="glass-btn-primary text-center py-2 rounded-lg font-medium">
+        Hubungi Saya
+    </a>
+
+</div>
 
     <!-- Hero Section -->
-    <section id="home" class="min-h-screen flex items-center justify-center pt-20 px-4 relative z-10">
-        <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-10 items-center">
-            
-            <!-- Text Content -->
-            <div class="space-y-6 reveal active">
-                <h1 class="text-5xl md:text-6xl font-semibold leading-tight text-slate-900">
-                    Menghidupkan Cerita <br>
-                    <span class="text-gradient">Melalui Visual Berkualitas</span>
-                </h1>
-                <p class="text-slate-600 text-lg max-w-lg leading-relaxed">
-                    Halo, saya Riyan, Video Editor & Videographer di balik RiEdit. Saya membantu brand, bisnis, dan kreator mengubah ide menjadi konten visual yang menarik, komunikatif, dan mampu meninggalkan kesan melalui storytelling yang efektif.
-                </p>
-                <div class="flex gap-4 pt-4">
-                    <a href="#portfolio" class="glass-btn-primary px-8 py-3 rounded-full font-medium shadow-lg flex items-center gap-2">
-                        <i class="fa-solid fa-play text-sm"></i> Lihat Karya
-                    </a>
-                    <a href="#contact" class="glass-btn px-8 py-3 rounded-full font-medium flex items-center gap-2">
-                        Mari Ngobrol
-                    </a>
-                </div>
-            </div>
+   <section id="home" class="min-h-screen flex items-center justify-center pt-28 md:pt-20 px-6 relative z-10">
 
-            <!-- Profile/Video Reel Preview (Glass Container) -->
-            <div class="relative reveal active delay-200">
-                <div class="glass-card rounded-3xl p-3 relative aspect-[4/5] overflow-hidden group">
-                    <!-- Placeholder Image (Pretend it's a looping showreel) -->
-                    <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Video Editor Setup" class="w-full h-full object-cover rounded-2xl opacity-90 group-hover:opacity-100 transition duration-500 grayscale group-hover:grayscale-0">
-                    
-                    <!-- Overlay Play Button -->
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <div class="w-16 h-16 glass rounded-full flex items-center justify-center cursor-pointer group-hover:scale-110 transition duration-300 shadow-[0_0_20px_rgba(255,255,255,0.6)]">
-                            <i class="fa-solid fa-play text-2xl text-slate-800 ml-1"></i>
-                        </div>
-                    </div>
-                    
-                    <!-- Floating Glass Badge -->
-                    <div class="absolute bottom-6 left-6 glass px-4 py-2 rounded-xl border border-white/80 backdrop-blur-md flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-full bg-[#1E88E5] flex items-center justify-center">
-                            <i class="fa-solid fa-clapperboard text-white"></i>
-                        </div>
-                        <div>
-                            <p class="text-xs text-slate-600">Pengalaman</p>
-                            <p class="text-sm font-bold text-slate-900">3+ Tahun</p>
-                        </div>
-                    </div>
-                </div>
+    <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+
+        <!-- Text -->
+        <div class="space-y-6 reveal active order-2 md:order-1">
+
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-semibold leading-tight text-slate-900">
+                Menghidupkan Cerita <br>
+                <span class="text-gradient">
+                    Melalui Visual Berkualitas
+                </span>
+            </h1>
+
+            <p class="text-slate-600 text-base md:text-lg max-w-lg leading-relaxed">
+                Halo, saya Riyan, Video Editor & Videographer di balik RiEdit.
+                Saya membantu brand, bisnis, dan kreator mengubah ide menjadi
+                konten visual yang menarik, komunikatif, dan mampu meninggalkan
+                kesan melalui storytelling yang efektif.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 pt-2">
+
+                <a href="#portfolio"
+                    class="glass-btn-primary px-8 py-3 rounded-full font-medium flex items-center justify-center gap-2">
+
+                    <i class="fa-solid fa-play text-sm"></i>
+                    Lihat Karya
+
+                </a>
+
+                <a href="#contact"
+                    class="glass-btn px-8 py-3 rounded-full font-medium flex items-center justify-center gap-2">
+
+                    Mari Ngobrol
+
+                </a>
+
             </div>
 
         </div>
-    </section>
+
+        <!-- Image -->
+        <div class="relative reveal active delay-200 order-1 md:order-2">
+
+            <div class="glass-card rounded-3xl p-3 relative aspect-[4/5] overflow-hidden group">
+
+                <img
+                    src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                    class="w-full h-full object-cover rounded-2xl">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
 
     <!-- Portfolio Section -->
     <section id="portfolio" class="py-24 px-4 relative z-10">
