@@ -127,30 +127,23 @@
             background: rgba(0, 0, 0, 0.2);
             border-radius: 4px;  
         }
-       ::-webkit-scrollbar-thumb:hover {
-    background: rgba(0, 0, 0, 0.4);
-}
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(0, 0, 0, 0.4);
+        }
 
         /* Text Gradient */
         .text-gradient {
             background: linear-gradient(to right, #1E88E5, #64B5F6);
-
-            /* Standard property */
-            background-clip: text;
-
-            /* WebKit compatibility */
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-
-            /* Firefox compatibility */
-            color: transparent;
         }
+
         /* Scroll Reveal Utility */
         .reveal {
             opacity: 0;
             transform: translateY(30px);
             transition: all 0.8s ease-out;
-}
+        }
         .reveal.active {
             opacity: 1;
             transform: translateY(0);
