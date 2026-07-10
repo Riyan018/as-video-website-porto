@@ -6,7 +6,29 @@
     <title>Portofolio Video Editor | Glass Aesthetic (Light Mode)</title>
     
     <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com">
+
+// Counter Animation
+document.addEventListener("DOMContentLoaded", function () {
+ const counters=document.querySelectorAll('.counter');
+ const obs=new IntersectionObserver((entries)=>{
+ entries.forEach(entry=>{
+ if(!entry.isIntersecting)return;
+ const el=entry.target; const target=parseInt(el.dataset.target)||0; const suffix=el.dataset.suffix||'';
+ let current=0;
+ const step=Math.max(1, Math.ceil(target/60));
+ const timer=setInterval(()=>{
+ current+=step;
+ if(current>=target){current=target; clearInterval(timer);}
+ el.textContent=current+suffix;
+ },16);
+ obs.unobserve(el);
+ });
+ },{threshold:0.4});
+ counters.forEach(c=>obs.observe(c));
+});
+
+</script>
     
     <!-- Google Fonts: Poppins -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -750,76 +772,30 @@
                 navbar.firstElementChild.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.05)';
             }
         });
-    </script>
-    // Navbar Glass effect on scroll
-const navbar = document.getElementById('navbar');
-window.addEventListener('scroll', () => {
-    ...
-});
+    
 
-/* ===== Counter Animation ===== */
-
-const counters = document.querySelectorAll(".counter");
-
-/* dst... */
-
-/* ===========================
-   Counter Animation
-=========================== */
-
+// Counter Animation
 document.addEventListener("DOMContentLoaded", function () {
-
-    const counters = document.querySelectorAll(".counter");
-
-    if (!counters.length) return;
-
-    const observer = new IntersectionObserver((entries) => {
-
-        entries.forEach(entry => {
-
-            if (!entry.isIntersecting) return;
-
-            const counter = entry.target;
-
-            const target = parseInt(counter.dataset.target);
-            const suffix = counter.dataset.suffix || "";
-
-            let current = 0;
-
-            const duration = 1800;
-            const increment = target / (duration / 16);
-
-            function animate() {
-
-                current += increment;
-
-                if (current < target) {
-
-                    counter.textContent = Math.floor(current) + suffix;
-                    requestAnimationFrame(animate);
-
-                } else {
-
-                    counter.textContent = target + suffix;
-
-                }
-
-            }
-
-            animate();
-
-            observer.unobserve(counter);
-
-        });
-
-    }, {
-        threshold: 0.5
-    });
-
-    counters.forEach(counter => observer.observe(counter));
-
+ const counters=document.querySelectorAll('.counter');
+ const obs=new IntersectionObserver((entries)=>{
+ entries.forEach(entry=>{
+ if(!entry.isIntersecting)return;
+ const el=entry.target; const target=parseInt(el.dataset.target)||0; const suffix=el.dataset.suffix||'';
+ let current=0;
+ const step=Math.max(1, Math.ceil(target/60));
+ const timer=setInterval(()=>{
+ current+=step;
+ if(current>=target){current=target; clearInterval(timer);}
+ el.textContent=current+suffix;
+ },16);
+ obs.unobserve(el);
+ });
+ },{threshold:0.4});
+ counters.forEach(c=>obs.observe(c));
 });
+
 </script>
+
     
 </body>
 </html>
