@@ -759,26 +759,61 @@ html{
                     </div>
                 </div>
 
-                <!-- Glass Contact Form -->
-                <form class="glass-card rounded-3xl p-8 reveal delay-100" onsubmit="event.preventDefault(); alertCustom('Pesan terkirim! Terima kasih telah menghubungi saya.');">
-                    <div class="space-y-4">
-                        <div>
-                            <label class="block text-xs font-medium text-slate-600 mb-1">Nama Lengkap</label>
-                            <input type="text" required class="w-full bg-white/60 border border-white/80 rounded-xl px-4 py-3 text-slate-900 focus:outline-none focus:border-[#1E88E5] focus:bg-white/80 transition backdrop-blur-sm placeholder-slate-400" placeholder="mars">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-medium text-slate-600 mb-1">Email</label>
-                            <input type="email" required class="w-full bg-white/60 border border-white/80 rounded-xl px-4 py-3 text-slate-900 focus:outline-none focus:border-[#1E88E5] focus:bg-white/80 transition backdrop-blur-sm placeholder-slate-400" placeholder="emailkamu@gmail.com">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-medium text-slate-600 mb-1">Ceritakan Project Anda</label>
-                            <textarea rows="4" required class="w-full bg-white/60 border border-white/80 rounded-xl px-4 py-3 text-slate-900 focus:outline-none focus:border-[#1E88E5] focus:bg-white/80 transition backdrop-blur-sm placeholder-slate-400 resize-none" placeholder="Saya butuh editor untuk..."></textarea>
-                        </div>
-                        <button type="submit" class="w-full glass-btn-primary py-3 rounded-xl font-bold shadow-lg mt-2">
-                            Kirim Pesan
-                        </button>
-                    </div>
-                </form>
+                        <form id="contactForm" class="glass-card rounded-3xl p-8 reveal delay-100">
+
+                            <div class="space-y-4">
+
+                                <div>
+                                    <label class="block text-xs font-medium text-slate-600 mb-1">
+                                        Nama Lengkap
+                                    </label>
+
+                                    <input
+                                        id="name"
+                                        type="text"
+                                        required
+                                        class="w-full bg-white/60 border border-white/80 rounded-xl px-4 py-3 text-slate-900 focus:outline-none focus:border-[#1E88E5] focus:bg-white/80 transition backdrop-blur-sm placeholder-slate-400"
+                                        placeholder="Nama Lengkap">
+                                </div>
+
+                                <div>
+                                    <label class="block text-xs font-medium text-slate-600 mb-1">
+                                        Email
+                                    </label>
+
+                                    <input
+                                        id="email"
+                                        type="email"
+                                        required
+                                        class="w-full bg-white/60 border border-white/80 rounded-xl px-4 py-3 text-slate-900 focus:outline-none focus:border-[#1E88E5] focus:bg-white/80 transition backdrop-blur-sm placeholder-slate-400"
+                                        placeholder="email@gmail.com">
+                                </div>
+
+                                <div>
+                                    <label class="block text-xs font-medium text-slate-600 mb-1">
+                                        Ceritakan Project Anda
+                                    </label>
+
+                                    <textarea
+                                        id="message"
+                                        rows="4"
+                                        required
+                                        class="w-full bg-white/60 border border-white/80 rounded-xl px-4 py-3 text-slate-900 focus:outline-none focus:border-[#1E88E5] focus:bg-white/80 transition backdrop-blur-sm placeholder-slate-400 resize-none"
+                                        placeholder="Saya butuh editor untuk..."></textarea>
+                                </div>
+
+                                <button
+                                    id="sendBtn"
+                                    type="submit"
+                                    class="w-full glass-btn-primary py-3 rounded-xl font-bold shadow-lg mt-2">
+
+                                    Kirim Pesan
+
+                                </button>
+
+                            </div>
+
+                        </form>
 
             </div>
         </div>
@@ -921,8 +956,85 @@ const observer = new IntersectionObserver((entries) => {
 sections.forEach((section) => {
     observer.observe(section);
 });
-</script>
 
-    
+// ============================
+// CONTACT FORM WHATSAPP
+// ============================
+
+const form = document.getElementById("contactForm");
+
+if (form) {
+
+    const btn = document.getElementById("sendBtn");
+
+    form.addEventListener("submit", function (e) {
+
+        e.preventDefault();
+
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const message = document.getElementById("message").value.trim();
+
+        if (!name || !email || !message) {
+            alertCustom("Mohon lengkapi semua data.");
+            return;
+        }
+
+        // Nomor WhatsApp tujuan
+        const phone = "6289656079691";
+
+        // Simpan teks asli tombol
+        const originalText = btn.innerHTML;
+
+        // Loading
+        btn.disabled = true;
+        btn.innerHTML = `
+            <i class="fa-solid fa-spinner fa-spin"></i>
+            <span class="ml-2">Menghubungkan...</span>
+        `;
+
+        const text = `Halo Riyan! 👋
+
+Saya tertarik menggunakan jasa Video Editing Anda.
+
+━━━━━━━━━━━━━━━━━━
+
+👤 Nama
+${name}
+
+📧 Email
+${email}
+
+🎬 Detail Project
+${message}
+
+━━━━━━━━━━━━━━━━━━
+
+Mohon informasi mengenai estimasi harga dan waktu pengerjaan.
+
+Terima kasih 🙏`;
+
+        setTimeout(() => {
+
+            window.open(
+                `https://wa.me/${phone}?text=${encodeURIComponent(text)}`,
+                "_blank"
+            );
+
+            form.reset();
+
+            btn.disabled = false;
+            btn.innerHTML = originalText;
+
+            if (typeof alertCustom === "function") {
+                alertCustom("WhatsApp berhasil dibuka.");
+            }
+
+        }, 1000);
+
+    });
+
+}
+</script>    
 </body>
 </html>
