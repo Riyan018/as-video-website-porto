@@ -5,29 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portofolio Video Editor | Glass Aesthetic (Light Mode)</title>
     
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com">
+   <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
-// Counter Animation
-document.addEventListener("DOMContentLoaded", function () {
- const counters=document.querySelectorAll('.counter');
- const obs=new IntersectionObserver((entries)=>{
- entries.forEach(entry=>{
- if(!entry.isIntersecting)return;
- const el=entry.target; const target=parseInt(el.dataset.target)||0; const suffix=el.dataset.suffix||'';
- let current=0;
- const step=Math.max(1, Math.ceil(target/60));
- const timer=setInterval(()=>{
- current+=step;
- if(current>=target){current=target; clearInterval(timer);}
- el.textContent=current+suffix;
- },16);
- obs.unobserve(el);
- });
- },{threshold:0.4});
- counters.forEach(c=>obs.observe(c));
-});
-
+    <script>
+    // Counter Animation
+    document.addEventListener("DOMContentLoaded", function () {
+        const counters = document.querySelectorAll('.counter');
+        ...
+    });
+    </script>
 </script>
     
     <!-- Google Fonts: Poppins -->
@@ -211,6 +198,24 @@ html{
             opacity: 1;
             transform: translateY(0);
         }
+        /* Portfolio 16:9 */
+#portfolio .glass-card{
+    width:100%;
+}
+
+#portfolio .aspect-video{
+    position:relative;
+    overflow:hidden;
+}
+
+#portfolio video{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
     </style>
 </head>
 <body class="relative min-h-screen">
@@ -378,468 +383,375 @@ html{
             <!-- Grid Gallery -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 
+<!-- Card 1 -->
+<a href="https://drive.google.com/file/d/1RgXcF1crfhmSj32DgLYHogCEIQmX-hdj/view?usp=sharing"
+   target="_blank"
+   rel="noopener noreferrer"
+   class="block reveal">
 
-                <!-- Card 1 -->
-                <a href="https://drive.google.com/file/d/1RgXcF1crfhmSj32DgLYHogCEIQmX-hdj/view?usp=sharing"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="block">
+    <div class="glass-card rounded-2xl overflow-hidden group cursor-pointer">
 
-                 <div class="glass-card rounded-2xl overflow-hidden group cursor-pointer reveal">
-                  <div class="relative aspect-[16/9] overflow-hidden">
+        <!-- Thumbnail 16:9 -->
+        <div class="relative aspect-video overflow-hidden">
 
-               <video
-                class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-110"
+            <video
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 autoplay
                 muted
                 loop
                 playsinline
                 preload="metadata">
+
                 <source src="https://res.cloudinary.com/ssyrbuuy/video/upload/f_mp4/v1783605762/1_1_vbgvpe.mp4" type="video/mp4">
-                </video>
-                 <div class="absolute inset-0 bg-slate-900/40 group-hover:bg-slate-900/20 transition duration-300 flex items-center justify-center">
-                     <i class="fa-regular fa-circle-play text-4xl text-white/90 opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-50 group-hover:scale-100"></i>
-                </div>
 
-                </div>
+            </video>
 
-        <div class="p-5 hidden">
+            <!-- Overlay -->
+            <div class="absolute inset-0 bg-slate-900/40 group-hover:bg-slate-900/20 transition-all duration-300 flex items-center justify-center">
+
+                <i class="fa-regular fa-circle-play text-4xl text-white opacity-0 group-hover:opacity-100 group-hover:scale-100 scale-75 transition-all duration-300"></i>
+
+            </div>
+
+        </div>
+
+        <!-- Hidden Info -->
+        <div class="hidden p-5">
+
             <div class="flex justify-between items-center mb-2">
                 <span class="text-xs font-semibold text-[#1E88E5] uppercase tracking-wider">
                     COMMERCIAL
                 </span>
+
                 <span class="text-xs text-slate-500">
                     2025
                 </span>
             </div>
 
             <h3 class="text-xl font-bold text-slate-900 mb-2">
-                 Ghiina Fashion
+                Ghiina Fashion
             </h3>
 
             <p class="text-sm text-slate-600 line-clamp-2">
-                 New Arrival Ghiina Fashion
+                New Arrival Ghiina Fashion
+            </p>
+
+        </div>
+
+    </div>
+
+</a>
+                
+ <!-- Card 2 -->
+<a href="https://drive.google.com/file/d/1StFu9c3o79ALphg9vsBeXzE1QM-AM-6D/view?usp=drive_link"
+   target="_blank"
+   rel="noopener noreferrer"
+   class="block reveal delay-100">
+
+    <div class="glass-card rounded-2xl overflow-hidden group cursor-pointer">
+
+        <div class="relative aspect-video overflow-hidden">
+
+            <video
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="metadata">
+
+                <source src="https://res.cloudinary.com/ssyrbuuy/video/upload/v1783609223/priview_konten_elzatta_hdrzbf.mp4" type="video/mp4">
+
+            </video>
+
+            <div class="absolute inset-0 bg-slate-900/40 group-hover:bg-slate-900/20 transition-all duration-300 flex items-center justify-center">
+                <i class="fa-regular fa-circle-play text-4xl text-white opacity-0 group-hover:opacity-100 group-hover:scale-100 scale-75 transition-all duration-300"></i>
+            </div>
+
+        </div>
+
+        <div class="hidden p-5">
+            <div class="flex justify-between items-center mb-2">
+                <span class="text-xs font-semibold text-blue-600 uppercase tracking-wider">Event</span>
+                <span class="text-xs text-slate-500">2024</span>
+            </div>
+
+            <h3 class="text-xl font-bold text-slate-900 mb-2">Elzatta</h3>
+
+            <p class="text-sm text-slate-600 line-clamp-2">
+                Event Glam Meet Up With Owner Elzatta.
             </p>
         </div>
+
     </div>
 
 </a>
 
-        <!-- Card 2 -->
-                <a href="https://drive.google.com/file/d/1StFu9c3o79ALphg9vsBeXzE1QM-AM-6D/view?usp=drive_link"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="block">
+  <!-- Card 3 -->
+<a href="https://drive.google.com/file/d/1uPx2Y495_NxwxkI6bNuL0DQKN03qvZoW/view?usp=drive_link"
+   target="_blank"
+   rel="noopener noreferrer"
+   class="block reveal delay-100">
 
-                <div class="glass-card rounded-2xl overflow-hidden group cursor-pointer reveal delay-100">
+    <div class="glass-card rounded-2xl overflow-hidden group cursor-pointer">
 
-                    <div class="relative aspect-[16/9] overflow-hidden">
+        <div class="relative aspect-video overflow-hidden">
 
-                        <video
-                            class="w-full h-full object-cover transition duration-500 group-hover:scale-110"
-                            autoplay
-                            muted
-                            loop
-                            playsinline
-                            preload="metadata">
+            <video
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="metadata">
 
-                            <source src="https://res.cloudinary.com/ssyrbuuy/video/upload/v1783609223/priview_konten_elzatta_hdrzbf.mp4"
-                                    type="video/mp4">
+                <source src="https://res.cloudinary.com/ssyrbuuy/video/upload/v1783612855/tetetete00001558_4_hzw3xa.mp4" type="video/mp4">
 
-                            Browser Anda tidak mendukung video.
-                        </video>
+            </video>
 
-                        <div class="absolute inset-0 bg-slate-900/40 group-hover:bg-slate-900/20 transition duration-300 flex items-center justify-center">
-                            <i class="fa-regular fa-circle-play text-4xl text-white/90 opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-50 group-hover:scale-100"></i>
-                        </div>
+            <div class="absolute inset-0 bg-slate-900/40 group-hover:bg-slate-900/20 transition-all duration-300 flex items-center justify-center">
+                <i class="fa-regular fa-circle-play text-4xl text-white opacity-0 group-hover:opacity-100 group-hover:scale-100 scale-75 transition-all duration-300"></i>
+            </div>
 
-                    </div>
+        </div>
 
-                    <div class="p-5 hidden">
-                        <div class="flex justify-between items-center mb-2">
-                            <span class="text-xs font-semibold text-blue-600 uppercase tracking-wider">
-                                Event
-                            </span>
-                            <span class="text-xs text-slate-500">
-                                2024
-                            </span>
-                        </div>
+        <div class="hidden p-5">
+            <div class="flex justify-between items-center mb-2">
+                <span class="text-xs font-semibold text-blue-600 uppercase tracking-wider">Daily Content</span>
+                <span class="text-xs text-slate-500">2024</span>
+            </div>
 
-                        <h3 class="text-xl font-bold text-slate-900 mb-2">
-                            Elzatta
-                        </h3>
+            <h3 class="text-xl font-bold text-slate-900 mb-2">
+                GISTRAV ISLAMIA SCHOOL
+            </h3>
 
-                        <p class="text-sm text-slate-600 line-clamp-2">
-                            Event Glam Meet Up With Owner Elzatta.
-                        </p>
-                    </div>
+            <p class="text-sm text-slate-600 line-clamp-2">
+                Daily content about GISTRAV ISLAMIA SCHOOL.
+            </p>
+        </div>
 
-                </div>
+    </div>
 
-            </a>
+</a>
 
-                <!-- Card 3 -->
-               <a href="https://drive.google.com/file/d/1uPx2Y495_NxwxkI6bNuL0DQKN03qvZoW/view?usp=drive_link"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="block">
-
-                <div class="glass-card rounded-2xl overflow-hidden group cursor-pointer reveal delay-100">
-
-                    <div class="relative aspect-[16/9] overflow-hidden">
-
-                        <video
-                            class="w-full h-full object-cover transition duration-500 group-hover:scale-110"
-                            autoplay
-                            muted
-                            loop
-                            playsinline
-                            preload="metadata">
-
-                            <source src="https://res.cloudinary.com/ssyrbuuy/video/upload/v1783612855/tetetete00001558_4_hzw3xa.mp4"
-                                    type="video/mp4">
-
-                            Browser Anda tidak mendukung video.
-                        </video>
-
-                        <div class="absolute inset-0 bg-slate-900/40 group-hover:bg-slate-900/20 transition duration-300 flex items-center justify-center">
-                            <i class="fa-regular fa-circle-play text-4xl text-white/90 opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-50 group-hover:scale-100"></i>
-                        </div>
-
-                    </div>
-
-                    <div class="p-5 hidden">
-                        <div class="flex justify-between items-center mb-2">
-                            <span class="text-xs font-semibold text-blue-600 uppercase tracking-wider">
-                                Daily Content
-                            </span>
-                            <span class="text-xs text-slate-500">
-                                2024
-                            </span>
-                        </div>
-
-                        <h3 class="text-xl font-bold text-slate-900 mb-2">
-                            GISTRAV ISLAMIA SCHOOL
-                        </h3>
-
-                        <p class="text-sm text-slate-600 line-clamp-2">
-                            Daily content about GISTRAV ISLAMIA SCHOOL.
-                        </p>
-                    </div>
-
-                </div>
-               </a>
 <!-- Card 4 -->
-                 <a href="https://drive.google.com/file/d/1lUOsvQ31vlZ5mwFr-Dck7jtpzHSXwetn/view?usp=sharing"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="block">
+<a href="https://drive.google.com/file/d/1lUOsvQ31vlZ5mwFr-Dck7jtpzHSXwetn/view?usp=sharing"
+   target="_blank"
+   rel="noopener noreferrer"
+   class="block reveal delay-100">
 
-                <div class="glass-card rounded-2xl overflow-hidden group cursor-pointer reveal delay-100">
+    <div class="glass-card rounded-2xl overflow-hidden group cursor-pointer">
 
-                    <div class="relative aspect-[16/9] overflow-hidden">
+        <div class="relative aspect-video overflow-hidden">
 
-                        <video
-                            class="w-full h-full object-cover transition duration-500 group-hover:scale-110"
-                            autoplay
-                            muted
-                            loop
-                            playsinline
-                            preload="metadata">
+            <video
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="metadata">
 
-                            <source src="https://res.cloudinary.com/ssyrbuuy/video/upload/v1784304801/priview_vlog_cimei_ydnccx.mp4"
-                                    type="video/mp4">
+                <source src="https://res.cloudinary.com/ssyrbuuy/video/upload/v1784304801/priview_vlog_cimei_ydnccx.mp4" type="video/mp4">
 
-                            Browser Anda tidak mendukung video.
-                        </video>
+            </video>
 
-                        <div class="absolute inset-0 bg-slate-900/40 group-hover:bg-slate-900/20 transition duration-300 flex items-center justify-center">
-                            <i class="fa-regular fa-circle-play text-4xl text-white/90 opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-50 group-hover:scale-100"></i>
-                        </div>
+            <div class="absolute inset-0 bg-slate-900/40 group-hover:bg-slate-900/20 transition-all duration-300 flex items-center justify-center">
+                <i class="fa-regular fa-circle-play text-4xl text-white opacity-0 group-hover:opacity-100 group-hover:scale-100 scale-75 transition-all duration-300"></i>
+            </div>
 
-                    </div>
+        </div>
 
-                    <div class="p-5 hidden">
-                        <div class="flex justify-between items-center mb-2">
-                            <span class="text-xs font-semibold text-blue-600 uppercase tracking-wider">
-                                Daily Content
-                            </span>
-                            <span class="text-xs text-slate-500">
-                                2026
-                            </span>
-                        </div>
+        <div class="hidden p-5">
+            <div class="flex justify-between items-center mb-2">
+                <span class="text-xs font-semibold text-blue-600 uppercase tracking-wider">Daily Content</span>
+                <span class="text-xs text-slate-500">2026</span>
+            </div>
 
-                        <h3 class="text-xl font-bold text-slate-900 mb-2">
-                            A Day In My Life
-                        </h3>
+            <h3 class="text-xl font-bold text-slate-900 mb-2">
+                A Day In My Life
+            </h3>
 
-                        <p class="text-sm text-slate-600 line-clamp-2">
-                            Daily content about A Day In My Life.
-                        </p>
-                    </div>
+            <p class="text-sm text-slate-600 line-clamp-2">
+                Daily content about A Day In My Life.
+            </p>
+        </div>
 
-                </div>
-                 
-               </a> <!-- Card  5-->
-                 <a href="https://drive.google.com/file/d/11YMq62nR8j1vWW2eZr2LWIiIxzrwCmdy/view?usp=sharing"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="block">
+    </div>
 
-                <div class="glass-card rounded-2xl overflow-hidden group cursor-pointer reveal delay-100">
+</a>
+<!-- Card 5 -->
+<a href="https://drive.google.com/file/d/11YMq62nR8j1vWW2eZr2LWIiIxzrwCmdy/view?usp=sharing"
+   target="_blank"
+   rel="noopener noreferrer"
+   class="block reveal delay-100">
 
-                    <div class="relative aspect-[16/9] overflow-hidden">
+    <div class="glass-card rounded-2xl overflow-hidden group cursor-pointer">
 
-                        <video
-                            class="w-full h-full object-cover transition duration-500 group-hover:scale-110"
-                            autoplay
-                            muted
-                            loop
-                            playsinline
-                            preload="metadata">
+        <div class="relative aspect-video overflow-hidden">
 
-                            <source src="https://res.cloudinary.com/ssyrbuuy/video/upload/v1784303097/Sisters_tau_nggak_kalau_checkout_lewat_WhatsApp_Momelca_benefitnya_lebih_banyak_Selain_hargany_xse5pr.mp4"
-                                    type="video/mp4">
+            <video
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="metadata">
 
-                            Browser Anda tidak mendukung video.
-                        </video>
+                <source src="https://res.cloudinary.com/ssyrbuuy/video/upload/v1784303097/Sisters_tau_nggak_kalau_checkout_lewat_WhatsApp_Momelca_benefitnya_lebih_banyak_Selain_hargany_xse5pr.mp4" type="video/mp4">
 
-                        <div class="absolute inset-0 bg-slate-900/40 group-hover:bg-slate-900/20 transition duration-300 flex items-center justify-center">
-                            <i class="fa-regular fa-circle-play text-4xl text-white/90 opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-50 group-hover:scale-100"></i>
-                        </div>
+            </video>
 
-                    </div>
+            <div class="absolute inset-0 bg-slate-900/40 group-hover:bg-slate-900/20 transition-all duration-300 flex items-center justify-center">
+                <i class="fa-regular fa-circle-play text-4xl text-white opacity-0 group-hover:opacity-100 group-hover:scale-100 scale-75 transition-all duration-300"></i>
+            </div>
 
-                    <div class="p-5 hidden">
-                        <div class="flex justify-between items-center mb-2">
-                            <span class="text-xs font-semibold text-blue-600 uppercase tracking-wider">
-                                Daily Content
-                            </span>
-                            <span class="text-xs text-slate-500">
-                                2026
-                            </span>
-                        </div>
+        </div>
 
-                        <h3 class="text-xl font-bold text-slate-900 mb-2">
-                            Momelca Daily Content
-                        </h3>
+        <div class="hidden p-5">
+            <div class="flex justify-between items-center mb-2">
+                <span class="text-xs font-semibold text-blue-600 uppercase tracking-wider">Daily Content</span>
+                <span class="text-xs text-slate-500">2026</span>
+            </div>
 
-                        <p class="text-sm text-slate-600 line-clamp-2">
-                            Momelca Daily Content.
-                        </p>
-                    </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-2">
+                Momelca Daily Content
+            </h3>
 
-                </div>
-               </a>
+            <p class="text-sm text-slate-600 line-clamp-2">
+                Momelca Daily Content.
+            </p>
+        </div>
 
-</a> <!-- Card  6-->
-                 <a href="https://drive.google.com/file/d/1hzEUdfsMSE45XkET1EQdT2sJ8bYrKgL0/view?usp=sharing"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="block">
+    </div>
 
-                <div class="glass-card rounded-2xl overflow-hidden group cursor-pointer reveal delay-100">
+</a>
 
-                    <div class="relative aspect-[16/9] overflow-hidden">
+<!-- Card 6 -->
+<a href="https://drive.google.com/file/d/1hzEUdfsMSE45XkET1EQdT2sJ8bYrKgL0/view?usp=sharing"
+   target="_blank"
+   rel="noopener noreferrer"
+   class="block">
 
-                        <video
-                            class="w-full h-full object-cover transition duration-500 group-hover:scale-110"
-                            autoplay
-                            muted
-                            loop
-                            playsinline
-                            preload="metadata">
+    <div class="glass-card rounded-2xl overflow-hidden group cursor-pointer reveal delay-100">
 
-                            <source src="https://res.cloudinary.com/ssyrbuuy/video/upload/v1784303097/Bukan_cuma_dapet_baju_baru_tapi_juga_uang_tunai_Khusus_belanja_lewat_WhatsApp_selama_Maret_k_hspqbq.mp4"
-                                    type="video/mp4">
+        <div class="relative w-full aspect-video overflow-hidden">
 
-                            Browser Anda tidak mendukung video.
-                        </video>
+            <video
+                class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-110"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="metadata">
 
-                        <div class="absolute inset-0 bg-slate-900/40 group-hover:bg-slate-900/20 transition duration-300 flex items-center justify-center">
-                            <i class="fa-regular fa-circle-play text-4xl text-white/90 opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-50 group-hover:scale-100"></i>
-                        </div>
+                <source src="https://res.cloudinary.com/ssyrbuuy/video/upload/v1784303097/Bukan_cuma_dapet_baju_baru_tapi_juga_uang_tunai_Khusus_belanja_lewat_WhatsApp_selama_Maret_k_hspqbq.mp4"
+                        type="video/mp4">
+            </video>
 
-                    </div>
+            <div class="absolute inset-0 bg-slate-900/40 group-hover:bg-slate-900/20 transition duration-300 flex items-center justify-center">
+                <i class="fa-regular fa-circle-play text-4xl text-white/90 opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-50 group-hover:scale-100"></i>
+            </div>
 
-                    <div class="p-5 hidden">
-                        <div class="flex justify-between items-center mb-2">
-                            <span class="text-xs font-semibold text-blue-600 uppercase tracking-wider">
-                                Daily Content
-                            </span>
-                            <span class="text-xs text-slate-500">
-                                2026
-                            </span>
-                        </div>
+        </div>
 
-                        <h3 class="text-xl font-bold text-slate-900 mb-2">
-                            Momelca 
-                        </h3>
+    </div>
 
-                        <p class="text-sm text-slate-600 line-clamp-2">
-                            Momelca.
-                        </p>
-                    </div>
+</a>
 
-                </div>
-               </a>
+<!-- Card 7 -->
+<a href="https://drive.google.com/file/d/114hpUIZsDmJ88x5FSfcopfxM2gYaxJG9/view?usp=sharing"
+   target="_blank"
+   rel="noopener noreferrer"
+   class="block">
 
+    <div class="glass-card rounded-2xl overflow-hidden group cursor-pointer reveal delay-100">
 
-               <!-- Card 7 -->
-                 <a href="https://drive.google.com/file/d/114hpUIZsDmJ88x5FSfcopfxM2gYaxJG9/view?usp=sharing"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="block">
+        <div class="relative w-full aspect-video overflow-hidden">
 
-                <div class="glass-card rounded-2xl overflow-hidden group cursor-pointer reveal delay-100">
+            <video
+                class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-110"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="metadata">
 
-                    <div class="relative aspect-[16/9] overflow-hidden">
+                <source src="https://res.cloudinary.com/ssyrbuuy/video/upload/v1784307365/Daily_content_2_o8cf34.mov"
+                        type="video/mp4">
+            </video>
 
-                        <video
-                            class="w-full h-full object-cover transition duration-500 group-hover:scale-110"
-                            autoplay
-                            muted
-                            loop
-                            playsinline
-                            preload="metadata">
+            <div class="absolute inset-0 bg-slate-900/40 group-hover:bg-slate-900/20 transition duration-300 flex items-center justify-center">
+                <i class="fa-regular fa-circle-play text-4xl text-white/90 opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-50 group-hover:scale-100"></i>
+            </div>
 
-                            <source src="https://res.cloudinary.com/ssyrbuuy/video/upload/v1784307365/Daily_content_2_o8cf34.mov"
-                                    type="video/mp4">
+        </div>
 
-                            Browser Anda tidak mendukung video.
-                        </video>
+    </div>
 
-                        <div class="absolute inset-0 bg-slate-900/40 group-hover:bg-slate-900/20 transition duration-300 flex items-center justify-center">
-                            <i class="fa-regular fa-circle-play text-4xl text-white/90 opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-50 group-hover:scale-100"></i>
-                        </div>
-
-                    </div>
-
-                    <div class="p-5 hidden">
-                        <div class="flex justify-between items-center mb-2">
-                            <span class="text-xs font-semibold text-blue-600 uppercase tracking-wider">
-                                Daily Content
-                            </span>
-                            <span class="text-xs text-slate-500">
-                                2025
-                            </span>
-                        </div>
-
-                        <h3 class="text-xl font-bold text-slate-900 mb-2">
-                            Ghiina fashion
-                        </h3>
-
-                        <p class="text-sm text-slate-600 line-clamp-2">
-                            Daily content about Ghiina fashion.
-                        </p>
-                    </div>
-
-                </div>
-
-
+</a>
 <!-- Card 8 -->
-                 <a href="https://drive.google.com/file/d/1v3VM8cAOthTrOLyMVbXsiBcyLeYFS1U7/view?usp=sharing"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="block">
+<a href="https://drive.google.com/file/d/1v3VM8cAOthTrOLyMVbXsiBcyLeYFS1U7/view?usp=sharing"
+   target="_blank"
+   rel="noopener noreferrer"
+   class="block">
 
-                <div class="glass-card rounded-2xl overflow-hidden group cursor-pointer reveal delay-100">
+    <div class="glass-card rounded-2xl overflow-hidden group cursor-pointer reveal delay-100">
 
-                    <div class="relative aspect-[16/9] overflow-hidden">
+        <div class="relative w-full aspect-video overflow-hidden">
 
-                        <video
-                            class="w-full h-full object-cover transition duration-500 group-hover:scale-110"
-                            autoplay
-                            muted
-                            loop
-                            playsinline
-                            preload="metadata">
+            <video
+                class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-110"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="metadata">
 
-                            <source src="https://res.cloudinary.com/ssyrbuuy/video/upload/v1784307390/Dailycontent_Ghiina1_vb05ot.mov"
-                                    type="video/mp4">
+                <source src="https://res.cloudinary.com/ssyrbuuy/video/upload/v1784307390/Dailycontent_Ghiina1_vb05ot.mov"
+                        type="video/mp4">
+            </video>
 
-                            Browser Anda tidak mendukung video.
-                        </video>
+            <div class="absolute inset-0 bg-slate-900/40 group-hover:bg-slate-900/20 transition duration-300 flex items-center justify-center">
+                <i class="fa-regular fa-circle-play text-4xl text-white/90 opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-50 group-hover:scale-100"></i>
+            </div>
 
-                        <div class="absolute inset-0 bg-slate-900/40 group-hover:bg-slate-900/20 transition duration-300 flex items-center justify-center">
-                            <i class="fa-regular fa-circle-play text-4xl text-white/90 opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-50 group-hover:scale-100"></i>
-                        </div>
+        </div>
 
-                    </div>
+    </div>
 
-                    <div class="p-5 hidden">
-                        <div class="flex justify-between items-center mb-2">
-                            <span class="text-xs font-semibold text-blue-600 uppercase tracking-wider">
-                                Daily Content
-                            </span>
-                            <span class="text-xs text-slate-500">
-                                2025
-                            </span>
-                        </div>
-
-                        <h3 class="text-xl font-bold text-slate-900 mb-2">
-                            Ghiina fashion
-                        </h3>
-
-                        <p class="text-sm text-slate-600 line-clamp-2">
-                            Daily content about Ghiina fashion.
-                        </p>
-                    </div>
-
-                </div>
-
-
+</a>
 <!-- Card 9 -->
-                 <a href="https://drive.google.com/file/d/1lZ3gC9yFsXaRSCi8-7GFfNbgHsW9vayB/view?usp=sharing"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="block">
+<a href="https://drive.google.com/file/d/1lZ3gC9yFsXaRSCi8-7GFfNbgHsW9vayB/view?usp=sharing"
+   target="_blank"
+   rel="noopener noreferrer"
+   class="block">
 
-                <div class="glass-card rounded-2xl overflow-hidden group cursor-pointer reveal delay-100">
+    <div class="glass-card rounded-2xl overflow-hidden group cursor-pointer reveal delay-100">
 
-                    <div class="relative aspect-[16/9] overflow-hidden">
+        <div class="relative w-full aspect-video overflow-hidden">
 
-                        <video
-                            class="w-full h-full object-cover transition duration-500 group-hover:scale-110"
-                            autoplay
-                            muted
-                            loop
-                            playsinline
-                            preload="metadata">
+            <video
+                class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-110"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="metadata">
 
-                            <source src="https://res.cloudinary.com/ssyrbuuy/video/upload/v1783845065/pandowoharjo_privie_cynf38.mp4"
-                                    type="video/mp4">
+                <source src="https://res.cloudinary.com/ssyrbuuy/video/upload/v1783845065/pandowoharjo_privie_cynf38.mp4"
+                        type="video/mp4">
+            </video>
 
-                            Browser Anda tidak mendukung video.
-                        </video>
+            <div class="absolute inset-0 bg-slate-900/40 group-hover:bg-slate-900/20 transition duration-300 flex items-center justify-center">
+                <i class="fa-regular fa-circle-play text-4xl text-white/90 opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-50 group-hover:scale-100"></i>
+            </div>
 
-                        <div class="absolute inset-0 bg-slate-900/40 group-hover:bg-slate-900/20 transition duration-300 flex items-center justify-center">
-                            <i class="fa-regular fa-circle-play text-4xl text-white/90 opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-50 group-hover:scale-100"></i>
-                        </div>
+        </div>
 
-                    </div>
+    </div>
 
-                   <div class="p-5 hidden">
-                        <div class="flex justify-between items-center mb-2">
-                            <span class="text-xs font-semibold text-blue-600 uppercase tracking-wider">
-                                Company Profile
-                            </span>
-                            <span class="text-xs text-slate-500">
-                                2025
-                            </span>
-                        </div>
-
-                        <h3 class="text-xl font-bold text-slate-900 mb-2">
-                            Kelurahan Pandowoharjo
-                        </h3>
-
-                        <p class="text-sm text-slate-600 line-clamp-2">
-                            Profile Kelurahan Pandowoharjo.
-                        </p>
-                    </div>
-
-                </div>
-
+</a>
                 <!-- More Button -->
                 <!-- Button Lihat Semua Karyaku -->
             <div class="col-span-full reveal">
